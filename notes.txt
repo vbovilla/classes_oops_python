@@ -1,0 +1,36 @@
+class Person:
+    // Base class
+    // Parent class
+    // Super class --> in Latin, super means above something
+
+class Employee:
+    // Derived class
+    // Child class
+    // Subclass
+
+class Client:
+    // Derived class
+    // Child class
+    // Subclass
+
+
+
+class Employee:
+    // name
+    // age
+    // salary
+    // increase_salary()
+
+class Developer:
+    // framework --> which development framework he/she is working
+    // bonus
+class Tester:
+    // run_tests()
+
+
+
+Pillars of Object Oriented Programming:
+    * Abstraction
+    * Encapsulation
+    * Inheritance
+    * Polymorphism

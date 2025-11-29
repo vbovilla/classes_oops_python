@@ -9,6 +9,12 @@ class Employee:
         # self.salary = salary
         self.set_salary(salary)
 
+    @property
+    def salary(self):
+        # return f"$ {self.salary}"
+        logging.warning('accessing salary details')
+        return self._salary
+
     def get_salary(self):
         # return f"$ {self.salary}"
         logging.warning('accessing salary details')
@@ -41,6 +47,7 @@ print(employee2)
 
 employee1.set_salary(1000)
 print(employee1.get_salary())
+print(employee1._salary)
 
 # str is a global method, which will invoke the overidden __str__ in this class
 # print(str(employee1))

@@ -1,8 +1,22 @@
+import logging
+
+
 class Employee:
     def __init__(self, name, age, position, salary):
         self.name = name
         self.age = age
         self.position = position
+        # self.salary = salary
+        self.set_salary = salary
+
+    def get_salary(self):
+        # return f"$ {self.salary}"
+        logging.warning('accessing salary details')
+        return self.salary
+
+    def set_salary(self, salary):
+        if salary < 1000:
+            raise ValueError('Minimum wage is $1000')
         self.salary = salary
 
     def increment_salary(self, percentage):
@@ -19,21 +33,24 @@ class Employee:
 
 
 employee1 = Employee('Vishnu', 25, 'developer', 5000)
-employee2 = Employee('Harini', 24, 'tester', 5000)
+employee2 = Employee('Harini', 24, 'tester', 1000)
 
 # employee1.print_info()
 print(employee1)
 print(employee2)
 
+employee1.set_salary(1000)
+print(employee1.get_salary())
+
 # str is a global method, which will invoke the overidden __str__ in this class
-print(str(employee1))
-print(str(employee2))
+# print(str(employee1))
+# print(str(employee2))
 
-print(repr(employee1))
-print(repr(employee2))
+# print(repr(employee1))
+# print(repr(employee2))
 
-print(eval(repr(employee1)))
-print(eval(repr(employee2)))
+# print(eval(repr(employee1)))
+# print(eval(repr(employee2)))
 
 
 # Dunder methods

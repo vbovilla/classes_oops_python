@@ -10,11 +10,15 @@ from dataclasses import dataclass
 #     def __repr__(self):
 #         return f"Project(name={repr(self.name)}, payment={repr(self.payment)}, client={repr(self.client)})"
 
-@dataclass
+@dataclass(slots=True)
 class Project:
     name: str
-    payment: str
+    payment: int
     client: str
+
+    def notify_client(self):
+        print(
+            f"Notifying the client about the progress of the {self.name}....")
 
 
 class Employee:
@@ -30,3 +34,5 @@ p = Project('Django application', 200000, 'Globomantics')
 e = Employee('Vishnu', 25, 'developer', 1000, p)
 
 print(e.project)
+print(Project.__slots__)
+# print(Project.__dict__)

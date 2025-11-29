@@ -7,17 +7,17 @@ class Employee:
         self.age = age
         self.position = position
         # self.salary = salary
-        self.set_salary = salary
+        self.set_salary(salary)
 
     def get_salary(self):
         # return f"$ {self.salary}"
         logging.warning('accessing salary details')
-        return self.salary
+        return self._salary
 
     def set_salary(self, salary):
         if salary < 1000:
             raise ValueError('Minimum wage is $1000')
-        self.salary = salary
+        self._salary = salary
 
     def increment_salary(self, percentage):
         self.salary += self.salary * (percentage/100)
@@ -35,7 +35,7 @@ class Employee:
 employee1 = Employee('Vishnu', 25, 'developer', 5000)
 employee2 = Employee('Harini', 24, 'tester', 1000)
 
-# employee1.print_info()
+employee1.print_info()
 print(employee1)
 print(employee2)
 
